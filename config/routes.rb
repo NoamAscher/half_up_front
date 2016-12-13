@@ -13,7 +13,9 @@ Rails.application.routes.draw do
 
 
   resources :jobs, only: [:create, :new, :edit, :show, :update, :destroy, :index] do
-    resources :milestones, only: [:create, :edit, :destroy, :update] do
+    # milestone route line below adjusted for vue
+    # resources :milestones, only: [:create, :edit, :destroy, :update] do
+    resources :milestones, :except => [:new, :edit] do
       resources :requirements, only: [:create, :edit, :destroy, :update]
     end
   end

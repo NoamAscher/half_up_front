@@ -1,16 +1,16 @@
  // sample Vue component
-  var users = new Vue({
-    el: '#users',
+  var milestones = new Vue({
+    el: '#milestones',
     data: {
-      users: []
+      milestones: []
     },
     ready: function() {
       var that;
       that = this;
       $.ajax({
-        url: '/users.json',
+        url: '/milestones.json',
         success: function(res) {
-          that.users = res;
+          that.milestones = res;
         }
       });
     }
