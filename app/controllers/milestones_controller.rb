@@ -1,22 +1,22 @@
 class MilestonesController < ApplicationController
 
-  # create and edit commented out for Vue
-
-  # def create
-  #   job = Job.find(params[:job_id])
-  #   milestone = Milestone.new()
-  #   milestone.job = job
-  #   if milestone.save
-  #     render json: milestone
-  #   else
-  #     render nothing: true, status: 400
-  #   end
-  # end
 
 
-  # def edit
+  def create
+    job = Job.find(params[:job_id])
+    milestone = Milestone.new()
+    milestone.job = job
+    if milestone.save
+      render json: milestone
+    else
+      render nothing: true, status: 400
+    end
+  end
 
-  # end
+
+  def edit
+
+  end
 
   def update
     milestone = Milestone.find(params[:id])
@@ -25,15 +25,13 @@ class MilestonesController < ApplicationController
     render json: ""
   end
 
-
-  # added for Vue
-  def index
-  @milestones = Milestone.all
-    respond_to do |format|
-      format.html
-      format.json { render :json => @milestones }
-    end
-  end
+  # def show
+  #   @milestones = Milestone.all
+  #   respond_to do |format|
+  #     format.html
+  #     format.json { render :json => @milestones }
+  #   end
+  # end
 
   # old version of def update, in case we need it:
   # def update

@@ -21,6 +21,7 @@ class LivedocController < WebsocketRails::BaseController
   #   broadcast_message :replace_details, message[:details]
   # end
 
+
   def update
     puts "made it to update function"
     # broadcast_message broadcast_key, message[:text]

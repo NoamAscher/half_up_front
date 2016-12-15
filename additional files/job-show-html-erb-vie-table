@@ -1,0 +1,18 @@
+<table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Payment Percentage</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="milestone in milestones">
+        <td><%= text_field :name, "v-model": "name" %></td>
+        <td>{{ milestone.start_date }}</td>
+        <td>{{ milestone.end_date }}</td>
+        <td><%= text_field :payment_percentage, "v-model": "payment_percentage" %></td>
+      </tr>
+    </tbody>
+  </table>

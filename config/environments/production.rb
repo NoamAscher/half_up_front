@@ -1,6 +1,11 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  # react line added as per https://github.com/reactjs/react-rails
+  config.react.variant = :production
+  # add-ons line may be needed for redux
+  config.react.addons = true # defaults to false
+
   # Code is not reloaded between requests.
   config.cache_classes = true
 

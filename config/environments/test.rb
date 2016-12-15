@@ -1,6 +1,12 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+
+  # react line *improvized* as per https://github.com/reactjs/react-rails
+  config.react.variant = :test
+  # add-ons line may be needed for redux
+  config.react.addons = true # defaults to false
+
   # The test environment is used exclusively to run your application's
   # test suite. You never need to work with it otherwise. Remember that
   # your test database is "scratch space" for the test suite and is wiped
