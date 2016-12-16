@@ -1,4 +1,6 @@
-<!-- <p id="notice"><%= notice %></p>
+<%= react_component 'Jobs', { data: @jobs } %>
+
+<p id="notice"><%= notice %></p>
 
 <h1>Listing Jobs</h1>
 
@@ -10,11 +12,13 @@
   </thead>
 
   <tbody>
+    <h2> Hello! </h2>
     <% @jobs.each do |job| %>
       <tr>
-        <td><%= link_to 'Show', job %></td>
-        <td><%= link_to 'Edit', edit_job_path(job) %></td>
-        <td><%= link_to 'Destroy', job, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+        <td>Id: <%= job.id %></td>
+        <td><%= link_to 'Show ', job %></td>
+        <td><%= link_to 'Edit ', edit_job_path(job) %></td>
+        <td><%= link_to 'Destroy ', job, method: :delete, data: {confirm: 'Are you sure?'} %></td>
       </tr>
     <% end %>
   </tbody>
@@ -22,6 +26,6 @@
 
 <br>
 
-<%= link_to 'New Job', new_job_path %> -->
+<%= link_to 'New Job', new_job_path %>
 
-THIS PAGE SHOW ALL CURRENT JOBS
+<h2> THIS PAGE SHOW ALL CURRENT JOBS </h2>

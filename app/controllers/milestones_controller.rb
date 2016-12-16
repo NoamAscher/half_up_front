@@ -25,6 +25,7 @@ class MilestonesController < ApplicationController
     render json: ""
   end
 
+  # the show method for vue, may be of use in some form?
   # def show
   #   @milestones = Milestone.all
   #   respond_to do |format|
