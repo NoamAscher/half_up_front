@@ -17,6 +17,8 @@
 <br>
 <section class="col-xl-8 offset-xl-4 col-lg-9 offset-lg-3 col-md-7 offset-md-5 col-sm-6 offset-sm-6" id="allMilestones" data-job="<%= @job.id %>">
 
+  <%= react_component 'Milestones', { data: @milestones } %>
+
 
   <%= button_to "+ Milestone", job_milestones_path(@job.id), :id => "new-milestone-btn", form_class: 'new-milestone-form', :class => "milestones", :method => :post, :remote => true %>
   <% @job.milestones.each do |milestone| %>
@@ -24,6 +26,8 @@
   <% end %>
 
 </section>
+
+
 
 
 <footer class="navbar navbar-fixed-bottom" id="allBudget">

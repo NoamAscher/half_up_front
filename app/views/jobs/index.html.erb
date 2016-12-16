@@ -1,8 +1,10 @@
-<%= react_component 'Jobs', { data: @jobs } %>
+
 
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Jobs</h1>
+<h2>Jobs Index Page</h2>
+
+<%= react_component 'Milestones', { data: @milestones } %>
 
 <table>
   <thead>

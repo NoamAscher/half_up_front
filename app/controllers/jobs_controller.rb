@@ -14,11 +14,13 @@ class JobsController < ApplicationController
     end
   end
 
-  def index
+  def index # loads milestones to job index page
+    @milestones = Milestone.all
     @jobs = Job.all
   end
 
   def show
+    @milestones = Milestone.all   # added for react
     @job = Job.find(params[:id])
   end
 
@@ -31,10 +33,11 @@ class JobsController < ApplicationController
   end
 
   def update
-  @job = Job.find(params[:id])
-  @job.update(job_params)
-  @job.save
-  redirect_to job_path(@job)
+
+    @job = Job.find(params[:id])
+    @job.update(job_params)
+    @job.save
+    redirect_to job_path(@job)
   end
 
   def destroy
