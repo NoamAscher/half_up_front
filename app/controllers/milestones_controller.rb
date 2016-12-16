@@ -1,7 +1,5 @@
 class MilestonesController < ApplicationController
 
-
-
   def create
     job = Job.find(params[:job_id])
     milestone = Milestone.new()
@@ -53,7 +51,7 @@ class MilestonesController < ApplicationController
     render json: @milestone
   end
 
-private
+  private
 
   def milestone_params
     params.require(:milestone).permit(:name, :payment_percentage, :start_date, :end_date, :requirements_summary, requirements_attributes: [:id, :name, :details])

@@ -376,16 +376,7 @@ $(function() {
 
   // save whole job, fields saved to be added
   $('#save-job').on('click', function (event) {
-    var job_id = parseInt(window.location.pathname.substring(6));
-    var url_j = '/jobs/' + job_id;
-    var data_j = {
-      budget: Number($('.job-budget').html())
-    }
-    $.ajax({
-      type: "PUT",
-      url: url_j,
-      data: data_j
-    });
+
     $('#allMilestones').children('.milestone').each(function() {
       var milestoneId = $(this).find('.save-milestone-btn').attr(MILESTONE_DATA_ATTRIBUTE_NAME);
       var list = $('#allMilestones').find('dl[data-milestone-id=' + milestoneId + ']');
@@ -398,6 +389,7 @@ $(function() {
         previous[current] = values[index];
         return previous;
       }, {});
+      console.log(data);
       var requirements = list.children('.requirement');
 
       data.requirements_attributes = []
@@ -421,6 +413,19 @@ $(function() {
         data: { milestone: data }
       });
     });
+
+    var job_id = parseInt(window.location.pathname.substring(6));
+    var url_j = '/jobs/' + job_id;
+    var data_j = {
+      budget: Number($('.job-budget').html())
+    };
+    console.log(data_j);
+    $.ajax({
+      type: "PUT",
+      url: url_j,
+      data: {jobs: data_j}
+    });
+
   });
 
   if(liveInfo.isEmployer) {
