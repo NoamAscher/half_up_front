@@ -1,6 +1,7 @@
 var MILESTONE_DATA_ATTRIBUTE_NAME = 'data-milestone-id';
 
-var dispatcher = new WebSocketRails('127.0.0.1:3000/websocket', false);
+// replace the following line with Actioncable stuff
+//var dispatcher = new WebSocketRails('127.0.0.1:3000/websocket', false);
 
 
 

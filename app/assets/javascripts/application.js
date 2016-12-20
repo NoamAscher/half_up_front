@@ -18,7 +18,8 @@
 //= require turbolinks
 //= require parallax
 //= require best_in_place
-//= require websocket_rails/main
+// require websocket_rails/main
+//= require cable
 //= require react
 //= require react_ujs
 //= require components
