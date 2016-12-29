@@ -19,6 +19,7 @@
 
   <%= react_component 'Milestones', { data: @milestones } %>
 
+  <!-- < % = react_component 'Milestones', milestone: render(partial: 'jobs/milestone.json', locals: {milestone: @milestone}) % > -->
 
   <%= button_to "+ Milestone", job_milestones_path(@job.id), :id => "new-milestone-btn", form_class: 'new-milestone-form', :class => "milestones", :method => :post, :remote => true %>
   <% @job.milestones.each do |milestone| %>

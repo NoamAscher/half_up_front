@@ -39,10 +39,12 @@ gem 'bootstrap', '~> 4.0.0.alpha5'
 #gem 'websocket-rails'
 
 # vuejs-rails attempted 2016.12.12
-gem 'vuejs-rails'
+#gem 'vuejs-rails'
 
 # React
 gem 'react-rails'  # '~> 1.0'  # <- experiment; from https://www.airpair.com/reactjs/posts/reactjs-a-guide-for-rails-developers
+gem 'sprockets-es6'
+
 
 gem 'envyable' # for managing environment variables
 

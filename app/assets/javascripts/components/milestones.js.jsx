@@ -1,5 +1,7 @@
 var Milestones = React.createClass({
   getInitialState: function() {
+    //let parsedMstones = JSON.parse(this.props.data);
+   // return { milestones: parsedMstones };
     return { milestones: this.props.data };
   },
 
@@ -7,28 +9,15 @@ var Milestones = React.createClass({
     return { milestones: [] };
   },
 
-  // componentDidMount() {
-  //   this.socket = new WebSocketRails('127.0.0.1:3000/websocket', false);
-  //   console.log("Milestones componentDidMount");
-  //   this.socket.onopen = () => {
-  //     console.log("Connected to server");
-  //     this.socket.onmessage = (event) => {
-  //       // if the message is a user count update
-  //       // (upon connection or disconnection):
-  //       if (JSON.parse(event.data).userCount) {
-  //         this.setState({userCount: JSON.parse(event.data).userCount});
-  //       // message handling behaviour all other situations:
-  //       } else {
-  //         var messages = this.state.messages;
-  //         messages = messages.concat(JSON.parse(event.data));
-  //         this.setState({messages: messages});
-  //       }
-  //     };
-  //   };
-  // }
-
   render: function() {
+
+    let milestones2 = this.state.milestones.map((milestone) => {
+      return this.renderMilestone(milestone);
+    });
+
     return(
+      <div>
+      <div>{milestones2}</div>
       <div className='milestones'>
         <h3 className='title'>
           Listing Some Data for All Milestones (All of them)
@@ -49,6 +38,47 @@ var Milestones = React.createClass({
           </tbody>
         </table>
       </div>
+      </div>
+    );
+  }, //,
+
+  renderMilestone(milestone) {
+    return (
+      <article key={milestone.id}>
+        <p>Name { milestone.name }</p>
+        <p>Payment Percentage { milestone.payment_percentage }</p>
+        <p>Start Date { milestone.start_date }</p>
+        <p>End Date { milestone.end_date }</p>
+        <br />
+      </article>
     );
   }
+
+  // componentDidMount() {
+  //   this.setupSubscription();
+  // },
+
+  // updateMilestones(milestone) {
+  //   let milestoney = JSON.parse(milestone);
+  //   this.setState({milestone: milestoney});
+  // },
+
+  // setupSubscription(){
+
+  //   App.milestones = App.cable.subscriptions.create("MilestonesChannel", {
+  //     milestone_name: this.state.milestone.name,
+
+  //     connected: function () {
+  //       setTimeout(() => this.perform('follow',
+  //                                     { milestone_name: this.milestone_name}), 1000 );
+  //     },
+
+  //     received: function (data) {
+  //       this.updateMilestones(data.milestone);
+  //     },
+
+  //     updateMilestones: this.updateMilestones
+
+  //   });
+  // }
 });
