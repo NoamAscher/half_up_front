@@ -18,7 +18,6 @@
 //= require turbolinks
 //= require parallax
 //= require best_in_place
-//= require websocket_rails/main
 //= require_tree .
 
 

@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.6'
+gem 'rails'
 
 # No longer Use sqlite3 as the database for Active Record
 #gem 'sqlite3'
@@ -41,12 +41,13 @@ gem 'bootstrap', '<= 4.0.0.alpha5'
 # trying this for puma.
 #gem 'websocket-rails', github: 'moaa/websocket-rails', branch: 'threadsocket-rails'
 #gem 'websocket-rails-js', github: 'websocket-rails/websocket-rails-js', branch: 'sub_protocols'
-gem 'redis', '3.2.0'
-#gem 'eventmachine'#, '1.0.9'
-# gem 'rack-cors', :require => 'rack/cors'
-gem 'websocket-rails'#, github: 'moaa/websocket-rails', branch: 'sync_fixes'
-# gem 'websocket-rails-js' # added 2017.01.20 because, haven't tried this yet.
-#gem 'faye-websocket', '0.10.0'
+# gem 'redis', '3.2.0'
+# #gem 'eventmachine'#, '1.0.9'
+# # gem 'rack-cors', :require => 'rack/cors'
+# gem 'websocket-rails'#, github: 'moaa/websocket-rails', branch: 'sync_fixes'
+# # gem 'websocket-rails-js' # added 2017.01.20 because, haven't tried this yet.
+# #gem 'faye-websocket', '0.10.0'
+gem 'actioncable'
 
 gem 'envyable' # for managing environment variables
 
